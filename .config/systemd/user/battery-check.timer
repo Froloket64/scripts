@@ -1,0 +1,6 @@
+[Unit]
+Description=Notify if the battery is running low
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+Unit=battery-check.service
