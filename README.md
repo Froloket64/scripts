@@ -6,12 +6,13 @@
 This repository contains scripts that help me with my daily Linux grind.
 
 ## Examples
-* [`battery-check`](/.local/bin/scripts/battery-check.sh): Sends a notification when the battery is running low. Uses a `systemd` (yes, yes, **systemd**) [unit](/.config/systemd/user/) to check the battery every minute.
+  * [`battery-check`](/.local/bin/scripts/battery-check.sh): Send a notification when the battery is running low. Uses a `systemd` (yes, yes, **systemd**) [unit](/.config/systemd/user/) to check the battery every minute.
+  * [`steamitem`](/.local/bin/scripts/steamitem): Download an item from Steam workshop.
 
 ## Installation
 ### Prerequisites
 Depending on a script, you might need:
-+ libnotify (and a notification daemon, e.g. [`dunst`](https://github.com/dunst-project/dunst))
+  + libnotify (and a notification daemon, e.g. [`dunst`](https://github.com/dunst-project/dunst))
 
 Also, if you don't use `systemd`, some scripts won't work. _(ehehe)_
 
