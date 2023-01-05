@@ -6,7 +6,7 @@
 This repository contains scripts that help me with my daily Linux grind.
 
 ## Examples
-* [`battery-check`](/.local/share/scripts/battery-check.sh): Sends a notification when the battery is running low. Uses a `systemd` (yes, yes, **systemd**) [unit](/.config/systemd/user/) to check the battery every minute.
+* [`battery-check`](/.local/bin/scripts/battery-check.sh): Sends a notification when the battery is running low. Uses a `systemd` (yes, yes, **systemd**) [unit](/.config/systemd/user/) to check the battery every minute.
 
 ## Installation
 ### Prerequisites
