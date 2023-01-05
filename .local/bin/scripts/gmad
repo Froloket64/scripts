@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# A script to extract any GMod addon into a directory, simplified
+
+GMAD_PATH=$(realpath "$1")
+ADDON_PATH=$(realpath "$2")
+DEST_PATH=$(realpath "$3")
+
+ADDON_NAME=$(basename "$ADDON_PATH")
+ADDON_DIR=$(echo "$ADDON_NAME" | cut -d "." -f 1)
+
+# If dir exists
+if test -f "$DEST_PATH/$ADDON_DIR"; then
+    echo "$ADDON_DIR exists, skipping..."
+    exit 0
+fi
+
+MAGIC_VALUE="$SRANDOM"
+TMP_DIR="/tmp/gmad_${MAGIC_VALUE}"
+
+mkdir "$TMP_DIR"
+cd "$TMP_DIR"
+
+cp "$ADDON_PATH" .
+"$GMAD_PATH" "$ADDON_NAME"
+cp -r "$ADDON_DIR" "$DEST_PATH"
+
+cd -
+
+rm -rf "$TMP_DIR"
