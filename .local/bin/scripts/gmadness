@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A wrapper on top of gmad.sh to bulk extract .gma's from a directory
+
+GMAD_PATH=$(realpath "$1")
+ADDONS_PATH=$(realpath "$2") # NOTE: Dir with all addon dirs
+DEST_PATH=$(realpath "$3")
+
+if command -v gmad; then
+    GMADSH_PATH="gmad"
+else
+    GMADSH_PATH=$(realpath "$4")
+fi
+
+for addon in $(find $ADDONS_PATH -type f); do
+    "$GMADSH_PATH" "$GMAD_PATH" "$addon" "$DEST_PATH"
+done
